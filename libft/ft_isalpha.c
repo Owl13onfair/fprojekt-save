@@ -6,14 +6,16 @@
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 11:29:56 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/09 11:50:17 by mmantz           ###   ########.fr       */
+/*   Updated: 2025/10/16 19:09:51 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int isalpha(char c)
-{
-		if(!((c >= 65 && 90 <= c) || (c >= 97 && 122 <= c)))
-			return(0);
 
-	return(1);
+int	ft_isalpha(char c)
+{
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	{
+		return (1);
+	}
+	return (0);
 }

@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 12:04:05 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/16 20:51:45 by mmantz           ###   ########.fr       */
+/*   Created: 2025/10/09 12:52:12 by mmantz            #+#    #+#             */
+/*   Updated: 2025/10/16 11:57:47 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-int	ft_strlen(char *str)
+#include <unistd.h>
+
+int	ft_tolower(int c);
+
+int	ft_tolower(int c)
 {
-	int	i_cont;
-
-	i_cont = 0;
-	while (str[i_cont])
-		i_cont++;
-	return (i_cont);
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	return (c);
 }
-
-// int main (void)
-// {
-// printf("%d",ft_strlen("123"));
-// printf("%d",ft_strlen(""));
-// printf("%d",ft_strlen("1239283"));
-// }

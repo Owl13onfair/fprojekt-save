@@ -6,16 +6,18 @@
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 11:51:57 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/10 10:37:05 by mmantz           ###   ########.fr       */
+/*   Updated: 2025/10/16 11:40:41 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 
-int isalnum(char c)
+int	ft_isalnum(char c)
 {
-		if(!((c >= 65 && 90 <= c) || (c >= 97 && 122 <= c)
-			|| (c >= 48 && 57 <= c)))
-			return(0);
-
-	return(1);
+	if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0'
+				&& c <= '9' )))
+		return (0);
+	return (1);
 }
+
+

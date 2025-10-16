@@ -6,39 +6,29 @@
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 17:48:59 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/10 18:23:18 by mmantz           ###   ########.fr       */
+/*   Updated: 2025/10/16 17:00:32 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <string.h>
 
-void *memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*ptr;
-	int		i_cont;
-	char curent;
-	char *temp;
-	i_cont = 0;
-	curent = s;
-	while(curent && i_cont <= n)
-	{
-		s++;
-		curent = s;
-		if (curent == c)
-		{
+	void	*temp;
+	size_t	i_cont;
 
-			return (s);
+	temp = (void *)s;
+	ptr = (char *)s;
+	i_cont = 0;
+	while (ptr[0] && i_cont < n)
+	{
+		if (ptr[i_cont] == c)
+		{
+			return ((void *)temp);
 		}
 		i_cont++;
+		temp++;
 	}
 	return (NULL);
-}
-
-
-int main (void)
-{
-
-
-
 }

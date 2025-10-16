@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 12:04:05 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/16 20:51:45 by mmantz           ###   ########.fr       */
+/*   Created: 2025/10/14 15:41:04 by mmantz            #+#    #+#             */
+/*   Updated: 2025/10/15 20:09:12 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-int	ft_strlen(char *str)
+#include "libft.h"
+#include <string.h>
+
+typedef struct s_list
 {
-	int	i_cont;
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
-	i_cont = 0;
-	while (str[i_cont])
-		i_cont++;
-	return (i_cont);
+t_list				*ft_lstnew(void *content);
+
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*l;
+
+	l = malloc(sizeof(t_list) * 1);
+	if (l == NULL)
+		return (NULL);
+	l->content = content;
+	l->next = NULL;
+	return (&l);
 }
-
-// int main (void)
-// {
-// printf("%d",ft_strlen("123"));
-// printf("%d",ft_strlen(""));
-// printf("%d",ft_strlen("1239283"));
-// }

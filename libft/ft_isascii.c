@@ -6,14 +6,14 @@
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 11:55:51 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/09 11:59:24 by mmantz           ###   ########.fr       */
+/*   Updated: 2025/10/16 20:52:52 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int isaski(char c)
+int	ft_isascii(char c)
 {
-		if(!((c >= 0 && 127 <= c)))
-			return(0);
-
-	return(1);
+	unsigned char a = (unsigned char) c;
+	if (!(a <= 127))
+		return (0);
+	return (1);
 }

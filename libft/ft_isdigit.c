@@ -6,17 +6,13 @@
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:01:46 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/09 12:03:50 by mmantz           ###   ########.fr       */
+/*   Updated: 2025/10/16 11:41:29 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
-int isprint(char c)
+int	ft_isdigit(char c)
 {
-		if(!((c >= 32 && 126 <= c)))
-			return(0);
-
-	return(1);
+	if (!((c >= '0' && c <= '9')))
+		return (0);
+	return (1);
 }

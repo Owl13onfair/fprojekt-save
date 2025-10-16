@@ -1,19 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 12:52:12 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/09 13:05:20 by mmantz           ###   ########.fr       */
+/*   Created: 2025/10/11 16:29:07 by mmantz            #+#    #+#             */
+/*   Updated: 2025/10/14 12:24:08 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int tolower(int c);
+#include <stdlib.h>
 
-int tolower(int c)
+char	*ft_strdup(const char *s);
+
+char	*ft_strdup(const char *s)
 {
-if (c >= 'a' && c<= 'z')
-c + 32;
+	int		i_cont;
+	char	*retstr;
+
+	i_cont = 0;
+	while (s[i_cont])
+		i_cont++;
+	retstr = malloc(i_cont + 1);
+	if (retstr == NULL)
+		return (NULL);
+	i_cont = 0;
+	while (s[i_cont])
+	{
+		retstr[i_cont] = s[i_cont];
+		i_cont++;
+	}
+	retstr[i_cont] = '\n';
+	return (retstr);
 }

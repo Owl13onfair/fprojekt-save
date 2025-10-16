@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 12:04:05 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/16 20:51:45 by mmantz           ###   ########.fr       */
+/*   Created: 2025/10/16 14:31:27 by mmantz            #+#    #+#             */
+/*   Updated: 2025/10/16 17:15:14 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-int	ft_strlen(char *str)
+#include <stdio.h>
+#include <string.h>
+
+char	*ft_strchr(const char *s, int c)
 {
-	int	i_cont;
+	char	*ptr;
+	int		i_cont;
 
+	ptr = NULL;
 	i_cont = 0;
-	while (str[i_cont])
+	while (s[i_cont] || c == s[i_cont])
+	{
+		if (s[i_cont] == c)
+		{
+			ptr = (char *)&s[i_cont];
+			return(ptr);
+		}
 		i_cont++;
-	return (i_cont);
+	}
+	return (ptr);
 }
-
-// int main (void)
-// {
-// printf("%d",ft_strlen("123"));
-// printf("%d",ft_strlen(""));
-// printf("%d",ft_strlen("1239283"));
-// }

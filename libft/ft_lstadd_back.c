@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 12:04:05 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/16 20:51:45 by mmantz           ###   ########.fr       */
+/*   Created: 2025/10/15 17:30:01 by mmantz            #+#    #+#             */
+/*   Updated: 2025/10/15 20:08:51 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-int	ft_strlen(char *str)
+#include "libft.h"
+
+t_list	*ft_lstlast(t_list *lst);
+
+void	ft_lstadd_back(t_list **lst, t_list *new);
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i_cont;
+	t_list	*last;
 
-	i_cont = 0;
-	while (str[i_cont])
-		i_cont++;
-	return (i_cont);
+	if (lst == NULL)
+		return ;
+	if (lst[0] == NULL || new == NULL)
+		return ;
+	last = ft_lstlast(lst[0]);
+	last->next = new;
 }
-
-// int main (void)
-// {
-// printf("%d",ft_strlen("123"));
-// printf("%d",ft_strlen(""));
-// printf("%d",ft_strlen("1239283"));
-// }

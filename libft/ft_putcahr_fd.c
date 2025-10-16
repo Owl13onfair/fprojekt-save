@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putcahr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 12:04:05 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/16 20:51:45 by mmantz           ###   ########.fr       */
+/*   Created: 2025/10/11 17:58:34 by mmantz            #+#    #+#             */
+/*   Updated: 2025/10/14 14:05:57 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-int	ft_strlen(char *str)
-{
-	int	i_cont;
+#include <unistd.h>
 
-	i_cont = 0;
-	while (str[i_cont])
-		i_cont++;
-	return (i_cont);
+void	ft_putchar_fd(char c, int fd);
+
+void	ft_putcahr_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }
 
 // int main (void)
 // {
-// printf("%d",ft_strlen("123"));
-// printf("%d",ft_strlen(""));
-// printf("%d",ft_strlen("1239283"));
+
+// 	ft_putchar_fd('a', open(grass));
 // }
+
+// neads to be tested

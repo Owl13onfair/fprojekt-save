@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 12:04:05 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/16 20:51:45 by mmantz           ###   ########.fr       */
+/*   Created: 2025/10/11 19:56:26 by mmantz            #+#    #+#             */
+/*   Updated: 2025/10/16 11:10:19 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-int	ft_strlen(char *str)
+#include <stdlib.h>
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i_cont;
+	unsigned int	i_cont;
+	char			*c_retstr;
 
 	i_cont = 0;
-	while (str[i_cont])
+	while (s[i_cont])
+	{
 		i_cont++;
-	return (i_cont);
+	}
+	c_retstr = malloc(i_cont);
+	if (c_retstr == NULL)
+		return (NULL);
+	i_cont = 0;
+	while (s[i_cont])
+	{
+		c_retstr[i_cont] = (*f)(i_cont, s[i_cont]);
+	}
+	return (c_retstr);
 }
-
-// int main (void)
-// {
-// printf("%d",ft_strlen("123"));
-// printf("%d",ft_strlen(""));
-// printf("%d",ft_strlen("1239283"));
-// }

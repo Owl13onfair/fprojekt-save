@@ -6,14 +6,15 @@
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 17:28:33 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/10 17:48:56 by mmantz           ###   ########.fr       */
+/*   Updated: 2025/10/16 11:44:40 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int isprint(char c)
-{
-		if(!((c >= ' ' && 126 <= c)))
-			return(0);
+int	ft_isprint(char c);
 
-	return(1);
+int	ft_isprint(char c)
+{
+	if (!((c >= ' ' && c <= 126)))
+		return (0);
+	return (1);
 }

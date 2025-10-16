@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 12:04:05 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/16 20:51:45 by mmantz           ###   ########.fr       */
+/*   Created: 2025/10/15 17:34:17 by mmantz            #+#    #+#             */
+/*   Updated: 2025/10/15 20:09:01 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-int	ft_strlen(char *str)
+#include "libft.h"
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	int	i_cont;
-
-	i_cont = 0;
-	while (str[i_cont])
-		i_cont++;
-	return (i_cont);
+	if (lst == NULL || del == NULL)
+		return ;
+	if (lst != NULL && del != NULL)
+		return ;
+	del(lst->content);
+	free(lst);
 }
-
-// int main (void)
-// {
-// printf("%d",ft_strlen("123"));
-// printf("%d",ft_strlen(""));
-// printf("%d",ft_strlen("1239283"));
-// }

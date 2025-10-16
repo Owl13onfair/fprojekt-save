@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmantz <mmantz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 12:04:05 by mmantz            #+#    #+#             */
-/*   Updated: 2025/10/16 20:51:45 by mmantz           ###   ########.fr       */
+/*   Created: 2025/10/11 20:18:49 by mmantz            #+#    #+#             */
+/*   Updated: 2025/10/14 12:23:46 by mmantz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-int	ft_strlen(char *str)
+#include "libft.h"
+#include <unistd.h>
+
+void	ft_putchar_fd(char c, int fd);
+
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i_cont;
 
 	i_cont = 0;
-	while (str[i_cont])
+	while (s[i_cont])
+	{
+		ft_putchar_fd(s[i_cont], fd);
 		i_cont++;
-	return (i_cont);
+	}
 }
 
-// int main (void)
+// void	ft_putchar_fd(char c, int fd);
+
+// void	ft_putchar_fd(char c, int fd)
 // {
-// printf("%d",ft_strlen("123"));
-// printf("%d",ft_strlen(""));
-// printf("%d",ft_strlen("1239283"));
+// 	write(fd, &c, 1);
 // }
